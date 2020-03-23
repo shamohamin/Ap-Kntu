@@ -1,4 +1,3 @@
-// import '../style/Home.css';
 import Home from "../components/HomeComponent/Home";
 
 const Index = () => (

@@ -6,8 +6,8 @@ import ConetentEditable from 'react-contenteditable' ;
 import {makeStyle , keyHandler , handlerUp} from './EditorHandler';
 import { CheckPMDTest } from './CheckPMDTest';
 import { Console } from './HomeComponents/Console';
-import CheckPMDtext from "./contents/CheckPMDTest";
-import CheckStyleText from "./contents/CheckStyle";
+import CheckPMDtext from "../contents/CheckPMDTest";
+import CheckStyleText from "../contents/CheckStyle";
 
 
 const Home = () => {

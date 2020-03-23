@@ -1,2 +1,7 @@
+import {HomeWork} from '../components/HomeWorkComponent/HomeWork';
 
-export default () => <p>homeworks</p>
+export default () => (
+    <div> 
+        <HomeWork />
+    </div>
+)

@@ -1,12 +1,13 @@
-.homework-component .main {
+.homework-component {
     background-color: #282c34;
-    min-height : 100vh ;
-    width: 100%;
+    /* min-height : 100vh ; */
     z-index: 1;
     border-top: red ;
     border-width: 20px;
     scroll-behavior: smooth;
-    
+    margin: auto;
+    padding: 20px;
+    max-width: 1500px;
 }
 
 .homework-component .card-animation {
@@ -26,21 +27,21 @@
     animation-fill-mode: forwards;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0%{box-shadow: 0 0 10px 5px gray; z-index: 1; perspective: 100px;}
     50%{box-shadow: 0 0 25px 5px gray; z-index: 2; perspective: 200px;}
     100%{box-shadow: 0 0 40px 5px gray; z-index: 3; perspective: 300px;}
-}
+} */
 
-@keyframes header {
+/* @keyframes header {
     0%{top:-1000px ;}
     100%{top:0px;}
-}
+} */
 
-@keyframes main  {
+/* @keyframes main  {
     0%{top:-1000px ;}
     100%{top:0px;}
-}
+} */
 
 .homework-component .wrapper{
     z-index: 3;

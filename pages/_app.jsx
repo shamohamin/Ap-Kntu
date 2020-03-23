@@ -3,6 +3,8 @@ import App from "next/app";
 import createReduxstore from '../redux/index';
 import { Provider } from 'react-redux';
 import { Layout } from "../components/Layout";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 class MyApp extends App {
 
@@ -27,12 +29,18 @@ class MyApp extends App {
 
     render(){
         const {Component, pageProps} = this.props ;
-        return (
+        return (<div>
             <Provider store={this.store}>
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>
             </Provider>
+            <style global jsx>{`
+                body {
+                    background-color : #282c34
+                }
+            `}</style>
+        </div>
         )
     }
 }

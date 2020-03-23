@@ -5,14 +5,17 @@ import React from 'react';
 export const ToggleLink = ({href, name}) => {
 
     const router = useRouter();
-    const baseClass = "nav-link text-secondary" ;
-    let activeClass = "";
+    const baseClass = "nav-link" ;
+    const diableClass = "text-secondary";
+    let activeClass = "text-warning";
     
-    if(router.pathname === href){
-        activeClass = "text-warning";
-    }
+    const makeClass = () => 
+        router.pathname === href ? `${baseClass} ${activeClass}` : `${baseClass} ${diableClass}`
 
-    return <Link href={href}>
-        <a className={`${baseClass} ${activeClass}`}>{name}</a>
-    </Link>
+    return <div>
+        <Link href={href}>
+            <a className={makeClass()}>{name}</a>
+        </Link>
+    </div>
+    
 }
