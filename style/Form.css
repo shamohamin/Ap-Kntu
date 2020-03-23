@@ -1,0 +1,35 @@
+.form-component .wrapper {
+    padding-top: 90px;
+    min-height: 100vh;
+    background-color: #282c34;
+    color: white;
+    
+}
+
+.form-component .form-wrapper {
+    border: 1px solid gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.form-component .title {
+    border-bottom: 1px solid gray;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: larger;
+
+}
+
+.form-component .input {
+    background-color: transparent;
+    outline: 0px solid transparent;
+}
+
+.form-component .button {
+    text-align: center;
+    outline: 0px solid transparent;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}

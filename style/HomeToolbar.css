@@ -1,0 +1,28 @@
+.home-toolbar .bar {
+    display: inline;
+    text-decoration: none;
+    list-style: none;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.home-toolbar * {
+    padding: 0px;
+    margin: 0px;
+}
+
+.home-toolbar .bar li {
+    display: block;
+    margin: 5px;
+    margin-left: 10px;
+    padding: 10px;
+} 
+
+.home-toolbar {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: none;
+    border: none;
+}

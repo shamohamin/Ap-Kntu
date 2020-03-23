@@ -1,0 +1,241 @@
+.home-component .container-made {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #282c34;
+}
+
+.home-component .welcome-wrapper{
+    width: 100%;
+}
+
+.home-component .te {
+    padding-top: 20px;
+    cursor: default ;
+    -webkit-flex: 1;
+    flex: 1;
+    direction: ltr;
+    align-items: center;
+    font-size: 2vw;
+    font-family: sans-serif;
+}
+
+.home-component .te > span {
+    color: orange;
+    padding-right: 2px;
+}
+
+.home-component .right-link {
+    -webkit-flex: 1;
+    flex: 1;
+    border-radius: 10px;
+    font-size: 2vw;
+    padding-left: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+.home-component .left-link{
+    -webkit-flex: 1;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-size: 2vw;
+    border-radius: 10px ;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;  
+    padding-left: 40px;
+}
+
+.home-component .bracket {
+    color: white;
+    margin-top:'10px';
+    font-size: 2vw;
+    font-style: bold;
+    font-family: sans-serif;
+    -webkit-flex: 1;
+    flex: 1;
+    padding-left: 5px; 
+    order: 1;
+}
+
+.home-component .nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+} 
+
+.home-component .menu {
+    background-color: gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 11px;
+    position: relative;
+}
+
+.home-component .exit {
+    position: absolute;
+    top: 0px ;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.home-component .minimum {
+    position: absolute;
+    top: 0px ;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 12px;
+    margin-left: 26px;
+}
+
+.home-component .maximum {
+    position: absolute;
+    top: 0px ;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 12px;
+    margin-left: 42px;
+}
+
+.home-component .right-link span {
+    color: orange;
+    padding-right:2px ;
+}
+
+.home-component .left-link span {
+    color: orange;
+    padding-right: 2px;
+}
+
+.home-component .editor {
+    /* width: 100%; */
+    /* display: block; */
+    margin-top: 10%;
+    height: 100px;
+    color: black;
+    perspective: 100px;
+}
+
+.home-component .content-editable {
+    padding: 5px;
+    border: 1px solid gray;
+    min-height: 100px;
+    outline: 0px solid transparent;
+    color: white;
+}
+
+.home-component .content-editable span {
+    color: orange;
+}
+
+.home-component .editor-header {
+    background-color: gray;
+    position: relative;
+    display: block;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-left: 10px;
+}
+
+.home-component .content-editable font {
+    color: purple;
+}
+
+.home-component .icon {
+    float: left;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.home-component .icon:hover {
+    border: 0.5px solid white;
+}
+
+.home-component .project-menu{
+    overflow-y: scroll;
+    height: 400px;
+    overflow-x: scroll;
+    border-bottom: 1px solid gray;
+}
+
+
+.home-component .icon-text {
+    color:'white';
+    font-size:'17px';
+}
+
+.home-component .editor-minimize {
+    position: relative;
+    cursor: pointer;
+}
+
+.home-component .editor-minimize-icon {
+    position: absolute;
+    left: -55px;
+    z-index: 10;
+    top: 20px;
+    padding: 10px;
+    padding-right: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    box-shadow: inset 10px 10px 10px white;
+}
+
+.home-component .editor-minimize-icon:hover {
+    left: 0px;
+    padding-right: 10px;
+}
+
+.home-component .exit-animation {
+    position: relative;
+    text-align: center;
+    content: "BYE";
+}
+
+.home-component .exit-animation > div{
+    position: absolute;
+    content: "BYE";
+    color: red;
+    top: 50px;
+    width:100%;
+    height: 100px;
+    border-radius: 20%;
+    border: 1px solid gray;
+    animation-name: exit-animated;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0, 1.51, .15, 1.85);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes exit-animated {
+    0%{top: 50px;width:100%;height: 100px;border-radius: 20%;content: "BYE";}
+    25%{left: 15% ;top: 50px; width: 75%; height: 75px; border-radius: 40%;background-color: gray;}
+    50%{left: 30% ;top: 50px;width: 50%;height: 50px;border-radius: 50%; background-color: #282c30;}
+    75%{left: 40% ;top: 70px; width: 25%;height: 25px;border-radius: 50%;background-color: #282c34;}
+    100%{left: 50%;top: 100px;width: 0;height: 0;border-radius: 50%;border: none;background-color: #282c34;}
+}
+
+.home-component .container-made [class^="container"] {
+    margin: auto;
+    max-width: 1500px;
+}
+
+.home-component .container-made [class^="row"] {
+    margin:0;
+}
