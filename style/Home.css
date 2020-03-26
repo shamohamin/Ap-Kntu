@@ -15,7 +15,7 @@
     flex: 1;
     direction: ltr;
     align-items: center;
-    font-size: 2vw;
+    font-size: 3vw;
     font-family: sans-serif;
 }
 
@@ -28,7 +28,7 @@
     -webkit-flex: 1;
     flex: 1;
     border-radius: 10px;
-    font-size: 2vw;
+    font-size: 2.3vw;
     padding-left: 40px;
     background-color: transparent;
     cursor: pointer;
@@ -41,7 +41,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    font-size: 2vw;
+    font-size: 2.3vw;
     border-radius: 10px ;
     background-color: transparent;
     cursor: pointer;
@@ -52,7 +52,7 @@
 .home-component .bracket {
     color: white;
     margin-top:'10px';
-    font-size: 2vw;
+    font-size: 3vw;
     font-style: bold;
     font-family: sans-serif;
     -webkit-flex: 1;

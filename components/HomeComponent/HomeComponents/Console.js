@@ -40,7 +40,7 @@ export const Console = ({showTerminal}) => {
         })
     }
     
-    return <div>    
+    return <div className="console">    
         {tab.length === 0 ? '' :
             <div className="container">
                 <div className="row" style={{backgroundColor:'#003d66'}}>
@@ -50,9 +50,8 @@ export const Console = ({showTerminal}) => {
                     </div>
                 </div>
                 <div className="row content">
-                    <div className="col-12" style={{outline:'0px solid transparent' ,
-                            padding:'10px'} }>
-                    <ContentEditable style={{padding:'10px', border:'1px solid gray', height:'150px'}}
+                    <div className="col-12" style={{padding:'10px'}}>
+                    <ContentEditable className="content-editable" style={{padding:'10px', border:'1px solid gray', height:'150px'}}
                                     html={content} onChange={(event) => setContent(event.target.value)}
                                     onKeyDown={event => keyPressed(event, setContent)} />
                     </div>

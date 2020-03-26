@@ -3,19 +3,20 @@ import App from "next/app";
 import createReduxstore from '../redux/index';
 import { Provider } from 'react-redux';
 import { Layout } from "../components/Layout";
+import withRedux from "next-redux-wrapper";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 class MyApp extends App {
 
-    constructor(props){
-        super(props);
-        this.store = createReduxstore();
-    }
+    // constructor(props){
+    //     super(props);
+    //     this.store = createReduxstore();
+    // }
 
-    componentDidMount(){
-        this.store = createReduxstore();
-    }
+    // componentDidMount(){
+    //     this.store = createReduxstore();
+    // }
 
     static async getInitialProps({ Component, router, ctx }) {
         let pageProps = {};
@@ -28,9 +29,9 @@ class MyApp extends App {
     }
 
     render(){
-        const {Component, pageProps} = this.props ;
+        const {Component, pageProps, store} = this.props ;
         return (<div>
-            <Provider store={this.store}>
+            <Provider store={store}>
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>
@@ -45,4 +46,4 @@ class MyApp extends App {
     }
 }
 
-export default MyApp;
+export default withRedux(createReduxstore, {debug:true})(MyApp);

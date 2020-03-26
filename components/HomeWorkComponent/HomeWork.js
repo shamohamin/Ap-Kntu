@@ -127,7 +127,7 @@ export const HomeWork = connect( () => ({}) , dispatch => ({
 
 
         render(){
-
+            console.log(this.props)
             return <div style={{scrollBehavior:'smooth'}} className="homework-component">
                 <div style={{scrollBehavior:'smooth'}}>
                     <div style={{boxShadow:'0 2px 2px 0 rgba(34,36,38,.15)' , borderRadius : '20px' }}>

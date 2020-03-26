@@ -1,6 +1,4 @@
-// import img  from "/components/HomeWorkComponent/images/image1.png";
-
-
+import { FormComponent } from "../components/RegisterComponent/FormComponent";
 export default () => <div>
-    <img src="/image1.png" />
+    <FormComponent />
 </div>

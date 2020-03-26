@@ -2,8 +2,6 @@ import React,{useEffect , useState} from 'react';
 import "../../style/Home.css";
 import { useRouter } from "next/router";
 import { HomeToolbar } from './HomeToolbar';
-import ConetentEditable from 'react-contenteditable' ;
-import {makeStyle , keyHandler , handlerUp} from './EditorHandler';
 import { CheckPMDTest } from './CheckPMDTest';
 import { Console } from './HomeComponents/Console';
 import CheckPMDtext from "../contents/CheckPMDTest";
@@ -11,56 +9,16 @@ import CheckStyleText from "../contents/CheckStyle";
 
 
 const Home = () => {
-    const [content , setContent] = useState("") ;
     const [word , setWord] = useState("") ;
     const [word2 , setWord2] = useState("") ;
     const [word3 , setWord3] = useState("") ;
     const [word4 , setWord4] = useState("") ;
     const [timerArray , setTimer] = useState([]);
     const [icon , setIcon] = useState(false) ;
-    const [editor, showEditor] = useState(true) ;
     const [PMD , showPMD] = useState(false) ;
     const [terminal, showTerminal] = useState(true) ;
     const [CheckStyle, showCheckStyle] = useState(false) ;
-    const [mininize , setMinimize] = useState(false) ;
     const router = useRouter() ;
-    const setter = (ev) => makeStyle(ev , (data) => setContent(() => data))
-
-
-    const renderEditor = () => {
-        if(editor){
-            return <div className="editor">
-                <div className="editor-header">
-                    <span onClick={() => showEditor(false)} style={{top: '10px' , left:'2px'}} className="exit"></span>
-                    <span onClick={() => {
-                            showEditor(false) ;
-                            setMinimize(true) ;
-                        }} style={{top: '10px' , left:'4px', cursor:'pointer'}}  className="minimum"></span>
-                    <span style={{top: '10px' , left:'6px'}}  className="maximum"></span>
-                    <span style={{paddingLeft:'40%'}}> Editor </span>
-                </div>
-                <div>   
-                    <ConetentEditable 
-                        className="content-editable"
-                        html={content}
-                        onChange={(ev) => setter(ev) }
-                        onKeyDown={(ev) => keyHandler(ev , setContent)}
-                        onKeyUp={ev => handlerUp(ev , setContent) }/>
-                </div>
-            </div>
-        }else if(mininize){
-            return <div onClick={() => {
-                setMinimize(false);
-                showEditor(true) ;
-            }} className="editor-minimize">
-                <div className="editor-minimize-icon">
-                    Editor
-                </div>
-            </div>
-        }else{
-            return <div className="exit-animation"><div></div></div>
-        }
-    }
 
     const updateWord = () => {
         const JAVAWORD = "public class Classroom {";
@@ -160,7 +118,6 @@ const Home = () => {
             <div className="container-made">
                 { icon ? <div onClick={() => {
                         setIcon(false);
-                        showEditor(true);
                         showPMD(false);
                         showTerminal(true);
                         showCheckStyle(false);
@@ -195,7 +152,6 @@ const Home = () => {
                                                     <div className="ml-2">
                                                         <span className="fas fa-caret-down"> </span> ir.ac.kntu
                                                         <div style={{cursor:'pointer'}} onClick={() => {
-                                                            showEditor(true);
                                                             showPMD(false);
                                                             showCheckStyle(false);
                                                         }} className="ml-2"> <span style={{color:'red'}} className="fab fa-java"> </span> Classroom.java </div>
@@ -210,15 +166,12 @@ const Home = () => {
                                                         <span className="fas fa-caret-down"></span> ir.ac.kntu.style
                                                         <div className="ml-2">
                                                             <span style={{color:'red' , display:"block", marginBottom:'3px'}} className="fab fa-java"><span style={{color:'white',fontSize:'17px'}}> SolutionTest.java </span></span> 
-                                                            <span style={{color:'red' , display:"block", marginBottom:'3px' , cursor:'pointer'}} className="fab fa-java"><span onClick={() => {
-                                                                showEditor(false);
+                                                            <span style={{color:'red' , display:"block", marginBottom:'3px' , cursor:'pointer'}} className="fab fa-java"><span onClick={() => {   
                                                                 showPMD(true);
                                                                 showCheckStyle(false);
-                                                                setMinimize(false) ;
+                                                                
                                                             }} style={{color:'white', fontSize:'17px'}}> CheckPMDTest.java </span></span> 
                                                             <span onClick={() => {
-                                                                setMinimize(false); 
-                                                                showEditor(false);
                                                                 showCheckStyle(true);
                                                                 showPMD(false);
                                                             }} style={{color:'red' ,display:"block" , cursor:'pointer'}} className="fab fa-java"><span style={{color:'white', fontSize:'17px'}}> CheckStyleTest.java </span></span> 
@@ -243,7 +196,6 @@ const Home = () => {
                                         <div style={{paddingTop: '10p',}}>
                                             {chooseContent()}
                                         </div>
-                                        {renderEditor()}
                                     </div>
                                 </div>
                             </div>
