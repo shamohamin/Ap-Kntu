@@ -239,3 +239,13 @@
 .home-component .container-made [class^="row"] {
     margin:0;
 }
+
+.home-component .project-menu  [data-toggle *= 'data-toggle'] {
+    cursor : pointer;
+}
+
+
+.home-component .slide-left {
+    border: none;
+    
+}
