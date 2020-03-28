@@ -6,6 +6,7 @@ import { CheckPMDTest } from './CheckPMDTest';
 import { Console } from './HomeComponents/Console';
 import CheckPMDtext from "../contents/CheckPMDTest";
 import CheckStyleText from "../contents/CheckStyle";
+import $ from 'jquery';
 
 
 const Home = () => {
@@ -113,6 +114,21 @@ const Home = () => {
         } 
     },[timerArray]);
 
+    const onToggle = (className) => {
+        let selectedItems = $(`span.${className} ~ div span`); 
+        const vis = selectedItems.is(':visible');
+        if(vis){
+            if(selectedItems.length !== 0){
+                selectedItems.toggle(false).is(':visible'); 
+                $(`span.${className}`).removeClass('fa-caret-down').addClass('fa-caret-right');   
+            }
+        }else{
+            selectedItems.toggle(true);
+            $(`span.${className}`).removeClass('fa-caret-right').addClass('fa-caret-down');
+        }
+    }
+
+
     return <React.Fragment>
         <div className="home-component">
             <div className="container-made">
@@ -144,42 +160,44 @@ const Home = () => {
                                         <div> <span className="fas fa-caret-down"></span> Classroom</div>
                                         <div className="ml-2"> <span className="fas fa-caret-right"> </span> .idea</div>
                                         <div className="ml-2"> 
-                                            <span className="fas fa-caret-down"> </span> src
+                                            <span className="fas fa-caret-down src">  src </span>
                                             <div className="ml-2"> 
-                                                <span className="fas fa-caret-down"> </span> main 
+                                                <span onClick={() => onToggle('main')} className="fas fa-caret-down main">  main </span> 
                                                 <div className="ml-2"> 
-                                                    <span className="fas fa-caret-down"> </span> java 
+                                                    <span onClick={() => onToggle('java')} className="fas fa-caret-down java"> java  </span> 
                                                     <div className="ml-2">
-                                                        <span className="fas fa-caret-down"> </span> ir.ac.kntu
+                                                        <span onClick={() => onToggle('ir-ac-kntu')} className="fas fa-caret-down ir-ac-kntu">  ir.ac.kntu </span>
                                                         <div style={{cursor:'pointer'}} onClick={() => {
                                                             showPMD(false);
                                                             showCheckStyle(false);
-                                                        }} className="ml-2"> <span style={{color:'red'}} className="fab fa-java"> </span> Classroom.java </div>
+                                                        }} className="ml-2"> <span  style={{color:'red'}} className="fab fa-java"><span> Classroom.java</span> </span>  </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="ml-2">
-                                                <span className="fas fa-caret-down"> </span> test
-                                                <div className="ml-2">
-                                                    <span className="fas fa-caret-down"> </span>java
+                                                <span onClick={() => onToggle('test')} data-toggle="toggle" className="fas fa-caret-down test">  test </span>
                                                     <div className="ml-2">
-                                                        <span className="fas fa-caret-down"></span> ir.ac.kntu.style
-                                                        <div className="ml-2">
-                                                            <span style={{color:'red' , display:"block", marginBottom:'3px'}} className="fab fa-java"><span style={{color:'white',fontSize:'17px'}}> SolutionTest.java </span></span> 
-                                                            <span style={{color:'red' , display:"block", marginBottom:'3px' , cursor:'pointer'}} className="fab fa-java"><span onClick={() => {   
-                                                                showPMD(true);
-                                                                showCheckStyle(false);
+                                                        <span onClick={() => onToggle('java-test')} data-toggle="toggle" className="fas fa-caret-down java-test"> java </span>
+                                                            <div className="ml-2">
+                                                                <span onClick={() => onToggle('ir-ac-kntu-style')} data-toggle="toggle" className="fas fa-caret-down ir-ac-kntu-style"> ir.ac.kntu.style </span>
+                                                                <div className="ml-2">
+                                                                    <span style={{color:'red' , display:"block", marginBottom:'3px'}} className="fab fa-java"><span style={{color:'white',fontSize:'17px'}}> SolutionTest.java </span></span> 
+                                                                    <span style={{color:'red' , display:"block", marginBottom:'3px' , cursor:'pointer'}} className="fab fa-java"><span onClick={() => {   
+                                                                        showPMD(true);
+                                                                        showCheckStyle(false);
+                                                                    }} style={{color:'white', fontSize:'17px'}}> CheckPMDTest.java </span></span> 
+                                                                    <span onClick={() => {
+                                                                        showCheckStyle(true);
+                                                                        showPMD(false);
+                                                                    }} style={{color:'red' ,display:"block" , cursor:'pointer'}} className="fab fa-java"><span style={{color:'white', fontSize:'17px'}}> CheckStyleTest.java </span></span> 
+                                                                    <span style={{display:"block", marginBottom:'3px'}} className="fas fa-file-code"><span style={{color:'white',fontSize:'17px'}}> config.xml </span></span> 
+                                                                    <span style={{display:"block", marginBottom:'3px'}} className="fas fa-file-code"><span style={{color:'white',fontSize:'17px'}}> naming.xml </span></span> 
+                                                                </div>
                                                                 
-                                                            }} style={{color:'white', fontSize:'17px'}}> CheckPMDTest.java </span></span> 
-                                                            <span onClick={() => {
-                                                                showCheckStyle(true);
-                                                                showPMD(false);
-                                                            }} style={{color:'red' ,display:"block" , cursor:'pointer'}} className="fab fa-java"><span style={{color:'white', fontSize:'17px'}}> CheckStyleTest.java </span></span> 
-                                                            <span style={{display:"block", marginBottom:'3px'}} className="fas fa-file-code"><span style={{color:'white',fontSize:'17px'}}> config.xml </span></span> 
-                                                            <span style={{display:"block", marginBottom:'3px'}} className="fas fa-file-code"><span style={{color:'white',fontSize:'17px'}}> naming.xml </span></span> 
-                                                        </div>
+                                                            </div>
+                                                        
                                                     </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div className="ml-2"> <span className="fas fa-caret-right"> </span> target </div>
